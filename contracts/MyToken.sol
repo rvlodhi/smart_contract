@@ -35,10 +35,10 @@ contract MyToken is ERC20 {
 
         console.log("Sender balance is %s tokens", balances[msg.sender]);
         console.log("Fees deducted will be %s percent", feePercent);
-        console.log("%s percent of %s tokens = %s MTN", feePercent, amount, (amount * (feePercent/100)));
-        console.log("Tokens to be transferred after fees deduction = %s MTN", (amount - amount * (feePercent/100)));
+        console.log("%s percent of %s tokens = %s MTN", feePercent, amount, ((amount * feePercent)/100));
+        console.log("Tokens to be transferred after fees deduction = %s MTN", (amount - (amount * feePercent)/100));
 
-        accumulatedFees += (amount * (feePercent / 100));
+        accumulatedFees += (amount * feePercent) / 100;
 
         // Transfer the amount
         balances[msg.sender] -= amount; // deducting from sender
