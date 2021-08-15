@@ -14,7 +14,7 @@ contract MyToken is ERC20, ERC20Burnable, Ownable {
     uint256 public accumulatedFees;
 
     constructor() ERC20("MyToken", "MTK") {
-        _mint(msg.sender, 1000000); // 1 million tokens
+        _mint(msg.sender, 10000 * 10000000000000000); // 1 million tokens
         feePercent = 10; // assuming 10 percent fees
     }
 
